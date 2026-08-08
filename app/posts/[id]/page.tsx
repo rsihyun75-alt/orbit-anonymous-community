@@ -9,4 +9,3 @@ export default async function PostPage({ params }: PageProps) {
   const postId = Number(id);
   return <CommunityApp initialPostId={Number.isInteger(postId) ? postId : -1} />;
 }
-
