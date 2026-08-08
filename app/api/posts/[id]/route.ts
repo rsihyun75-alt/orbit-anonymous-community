@@ -7,18 +7,17 @@ export async function GET(
   const { id } = await params;
   const postId = Number(id);
   if (!Number.isInteger(postId) || postId < 1) {
-    return Response.json({ error: "寃뚯떆湲??李얠쓣 ???놁뼱??" }, { status: 404 });
+    return Response.json({ error: "게시글을 찾을 수 없어요." }, { status: 404 });
   }
 
   try {
     const post = await getPost(postId);
     if (!post) {
-      return Response.json({ error: "寃뚯떆湲??李얠쓣 ???놁뼱??" }, { status: 404 });
+      return Response.json({ error: "게시글을 찾을 수 없어요." }, { status: 404 });
     }
     return Response.json(post, { headers: { "Cache-Control": "no-store" } });
   } catch (error) {
     console.error("GET /api/posts/[id] failed", error);
-    return Response.json({ error: "寃뚯떆湲??遺덈윭?ㅼ? 紐삵뻽?댁슂." }, { status: 500 });
+    return Response.json({ error: "게시글을 불러오지 못했어요." }, { status: 500 });
   }
 }
-
