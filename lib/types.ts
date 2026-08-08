@@ -42,4 +42,3 @@ export type CreateCommentInput = {
   content: string;
   nickname: string;
 };
-
