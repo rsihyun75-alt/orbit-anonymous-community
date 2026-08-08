@@ -11,13 +11,13 @@ export async function POST(
   const { id } = await params;
   const postId = Number(id);
   if (!Number.isInteger(postId) || postId < 1) {
-    return Response.json({ error: "寃뚯떆湲??李얠쓣 ???놁뼱??" }, { status: 404 });
+    return Response.json({ error: "게시글을 찾을 수 없어요." }, { status: 404 });
   }
 
   try {
     const post = await getPost(postId, false);
     if (!post) {
-      return Response.json({ error: "寃뚯떆湲??李얠쓣 ???놁뼱??" }, { status: 404 });
+      return Response.json({ error: "게시글을 찾을 수 없어요." }, { status: 404 });
     }
 
     const body = (await request.json()) as Record<string, unknown>;
@@ -29,20 +29,19 @@ export async function POST(
         : Number(body.parentId);
 
     if (!nickname || nickname.length < 2) {
-      return Response.json({ error: "?됰꽕?꾩쓣 ??湲???댁긽 ?낅젰??二쇱꽭??" }, { status: 400 });
+      return Response.json({ error: "닉네임을 두 글자 이상 입력해 주세요." }, { status: 400 });
     }
     if (!content || content.length < 2) {
-      return Response.json({ error: "?볤? ?댁슜????湲???댁긽 ?낅젰??二쇱꽭??" }, { status: 400 });
+      return Response.json({ error: "댓글 내용을 두 글자 이상 입력해 주세요." }, { status: 400 });
     }
     if (parentId !== null && (!Number.isInteger(parentId) || !(await commentBelongsToPost(postId, parentId)))) {
-      return Response.json({ error: "??볤??????먮뙎湲??李얠쓣 ???놁뼱??" }, { status: 400 });
+      return Response.json({ error: "대댓글을 달 원댓글을 찾을 수 없어요." }, { status: 400 });
     }
 
     const comment = await createComment({ postId, parentId, nickname, content });
     return Response.json(comment, { status: 201 });
   } catch (error) {
     console.error("POST /api/posts/[id]/comments failed", error);
-    return Response.json({ error: "?볤?????ν븯吏 紐삵뻽?댁슂. ?좎떆 ???ㅼ떆 ?쒕룄??二쇱꽭??" }, { status: 500 });
+    return Response.json({ error: "댓글을 저장하지 못했어요. 잠시 후 다시 시도해 주세요." }, { status: 500 });
   }
 }
-
