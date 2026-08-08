@@ -33,7 +33,7 @@ export async function GET(request: Request) {
     return Response.json(filtered, { headers: { "Cache-Control": "no-store" } });
   } catch (error) {
     console.error("GET /api/posts failed", error);
-    return Response.json({ error: "寃뚯떆湲??遺덈윭?ㅼ? 紐삵뻽?댁슂." }, { status: 500 });
+    return Response.json({ error: "게시글을 불러오지 못했어요." }, { status: 500 });
   }
 }
 
@@ -48,20 +48,19 @@ export async function POST(request: Request) {
     };
 
     if (!input.title || input.title.length < 2) {
-      return Response.json({ error: "?쒕ぉ????湲???댁긽 ?낅젰??二쇱꽭??" }, { status: 400 });
+      return Response.json({ error: "제목을 두 글자 이상 입력해 주세요." }, { status: 400 });
     }
     if (!input.content || input.content.length < 5) {
-      return Response.json({ error: "?댁슜???ㅼ꽢 湲???댁긽 ?낅젰??二쇱꽭??" }, { status: 400 });
+      return Response.json({ error: "내용을 다섯 글자 이상 입력해 주세요." }, { status: 400 });
     }
     if (!input.nickname || input.nickname.length < 2) {
-      return Response.json({ error: "?됰꽕?꾩쓣 ??湲???댁긽 ?낅젰??二쇱꽭??" }, { status: 400 });
+      return Response.json({ error: "닉네임을 두 글자 이상 입력해 주세요." }, { status: 400 });
     }
 
     const post = await createPost(input);
     return Response.json(post, { status: 201 });
   } catch (error) {
     console.error("POST /api/posts failed", error);
-    return Response.json({ error: "寃뚯떆湲????ν븯吏 紐삵뻽?댁슂. ?좎떆 ???ㅼ떆 ?쒕룄??二쇱꽭??" }, { status: 500 });
+    return Response.json({ error: "게시글을 저장하지 못했어요. 잠시 후 다시 시도해 주세요." }, { status: 500 });
   }
 }
-
