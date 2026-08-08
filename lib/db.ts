@@ -55,51 +55,51 @@ type CommentRow = {
 };
 
 const categoryLabels: Record<Exclude<Category, "all">, string> = {
-  free: "?먯쑀?섎떎",
-  question: "吏덈Ц?덉뼱??,
-  life: "?쇱긽湲곕줉",
-  tip: "?묒???,
+  free: "자유수다",
+  question: "질문있어요",
+  life: "일상기록",
+  tip: "작은팁",
 };
 
 const seedStore: FallbackStore = {
   posts: [
     {
       id: 1,
-      title: "?붿쬁 ?섎? ?ㅼ떆 ?吏곸씠寃????묒? ?듦?",
+      title: "요즘 나를 다시 움직이게 한 작은 습관",
       content:
-        "嫄곗갹??紐⑺몴蹂대떎 留ㅼ씪 諛섎났?????덈뒗 ?묒? ?됰룞???섎굹 ?뺥빐 蹂대씪??留먯쓣 ?ｊ퀬, ?꾩묠留덈떎 李쎈Ц???щ뒗 ?쇰????쒖옉?덉뼱?? ?뉖튆??蹂닿퀬 臾쇱쓣 ????留덉떆??3遺꾩씠 ?앷컖蹂대떎 ?섎（??諛⑺뼢??留롮씠 諛붽퓭 二쇰꽕??",
+        "거창한 목표보다 매일 반복할 수 있는 작은 행동을 하나 정해 보라는 말을 듣고, 아침마다 창문을 여는 일부터 시작했어요. 햇빛을 보고 물을 한 잔 마시는 3분이 생각보다 하루의 방향을 많이 바꿔 주네요.",
       category: "life",
-      nickname: "珥덈줉癒멸렇",
+      nickname: "초록머그",
       createdAt: "2026-08-06T09:24:00+09:00",
       views: 128,
     },
     {
       id: 2,
-      title: "?닿렐 ??20遺꾩쓣 ???곕뒗 諛⑸쾿???덉쓣源뚯슂?",
+      title: "퇴근 후 20분을 잘 쓰는 방법이 있을까요?",
       content:
-        "吏묒뿉 ?ㅻ㈃ 諛붾줈 ?꾩썙 踰꾨━???좎씠 留롮븘?? 吏㏐쾶?쇰룄 ?섎? ?꾪븳 ?쒓컙??留뚮뱾怨??띠뼱?? ?대룞?대굹 ?낆꽌泥섎읆 ?섏?媛 留롮씠 ?꾩슂????留먭퀬, 遺???놁씠 ?쒖옉?????덈뒗 諛⑸쾿??李얘퀬 ?덉뒿?덈떎.",
+        "집에 오면 바로 누워 버리는 날이 많아서, 짧게라도 나를 위한 시간을 만들고 싶어요. 운동이나 독서처럼 의지가 많이 필요한 일 말고, 부담 없이 시작할 수 있는 방법을 찾고 있습니다.",
       category: "question",
-      nickname: "?듬챸_17",
+      nickname: "익명_17",
       createdAt: "2026-08-06T08:10:00+09:00",
       views: 94,
     },
     {
       id: 3,
-      title: "鍮??ㅻ뒗 ?좎뿉 ?댁슱由щ뒗 ?뚮젅?대━?ㅽ듃",
+      title: "비 오는 날에 어울리는 플레이리스트",
       content:
-        "?ㅻ뒛泥섎읆 鍮꾧? 議곗슜???대━???좎씠硫??좊궃??吏묒쨷???섎뤌?? ?щ윭遺꾩? ?대윴 ???대뼡 ?뚯븙??????먮굹?? 媛?ш? 留롮? ?딆? 怨≪씠硫???醫뗭쓣 寃?媛숈븘??",
+        "오늘처럼 비가 조용히 내리는 날이면 유난히 집중이 잘돼요. 여러분은 이런 날 어떤 음악을 틀어 두나요? 가사가 많지 않은 곡이면 더 좋을 것 같아요.",
       category: "free",
-      nickname: "李쎄??먮━",
+      nickname: "창가자리",
       createdAt: "2026-08-05T22:42:00+09:00",
       views: 76,
     },
     {
       id: 4,
-      title: "?섎쭔???숇꽕 ?곗콉 肄붿뒪瑜?湲곕줉??遊ㅼ뼱??,
+      title: "나만의 동네 산책 코스를 기록해 봤어요",
       content:
-        "???30遺??숈븞 嫄룰린 醫뗭? 湲몄쓣 ?섎굹 諛쒓껄?덉뒿?덈떎. ?곌만?먯꽌 ??釉붾줉留??ㅼ뼱媛硫??묒? ?뺤썝怨??ㅻ옒??鍮듭쭛???댁뼱?몄꽌, ?좉퉸 ?ы뻾?섎뒗 湲곕텇???ㅼ뼱??",
+        "저녁 30분 동안 걷기 좋은 길을 하나 발견했습니다. 큰길에서 한 블록만 들어가면 작은 정원과 오래된 빵집이 이어져서, 잠깐 여행하는 기분이 들어요.",
       category: "tip",
-      nickname: "?먮┛嫄몄쓬",
+      nickname: "느린걸음",
       createdAt: "2026-08-05T19:18:00+09:00",
       views: 61,
     },
@@ -109,32 +109,32 @@ const seedStore: FallbackStore = {
       id: 1,
       postId: 1,
       parentId: null,
-      nickname: "?ㅻ뒛?섑뻼??,
-      content: "????꾩묠??而ㅽ듉???щ뒗 寃껊????대낫怨??덉뼱?? ?뺣쭚 湲곕텇???щ씪吏?붾씪怨좎슂.",
+      nickname: "오늘의햇살",
+      content: "저도 아침에 커튼을 여는 것부터 해보고 있어요. 정말 기분이 달라지더라고요.",
       createdAt: "2026-08-06T10:02:00+09:00",
     },
     {
       id: 2,
       postId: 1,
       parentId: 1,
-      nickname: "珥덈줉癒멸렇",
-      content: "留욎븘?? ?묒븘??怨꾩냽?????덈떎??寃??쒖씪 醫뗭? 寃?媛숈븘??",
+      nickname: "초록머그",
+      content: "맞아요. 작아서 계속할 수 있다는 게 제일 좋은 것 같아요.",
       createdAt: "2026-08-06T10:15:00+09:00",
     },
     {
       id: 3,
       postId: 2,
       parentId: null,
-      nickname: "?щ갚?쒖뒪??,
-      content: "????ㅼ썙?섍린 ?꾩뿉 ?ㅽ듃?덉묶 5遺꾩쓣 ?댁슂. ?쒖옉?섎㈃ ?앷컖蹂대떎 湲멸쾶 ?섍쾶 ?⑸땲??",
+      nickname: "여백한스푼",
+      content: "저는 샤워하기 전에 스트레칭 5분을 해요. 시작하면 생각보다 길게 하게 됩니다.",
       createdAt: "2026-08-06T08:51:00+09:00",
     },
     {
       id: 4,
       postId: 3,
       parentId: null,
-      nickname: "諛ㅼ궛梨?,
-      content: "????쇱븘???곗＜怨≪쓣 ????ъ슂. 鍮??뚮━???욎씠硫?留덉쓬??李⑤텇?댁졇??",
+      nickname: "밤산책",
+      content: "저는 피아노 연주곡을 틀어 둬요. 비 소리랑 섞이면 마음이 차분해져요.",
       createdAt: "2026-08-05T23:08:00+09:00",
     },
   ],
@@ -266,7 +266,7 @@ function summaryFromPost(post: StoredPost, commentCount: number): PostSummary {
   return {
     id: post.id,
     title: post.title,
-    excerpt: post.content.length > 130 ? post.content.slice(0, 130) + "?? : post.content,
+    excerpt: post.content.length > 130 ? post.content.slice(0, 130) + "…" : post.content,
     category: post.category,
     categoryLabel: categoryLabels[post.category],
     nickname: post.nickname,
@@ -456,4 +456,3 @@ export async function createComment(input: CreateCommentInput): Promise<CommentI
 export function getCategoryLabel(category: Exclude<Category, "all">) {
   return categoryLabels[category];
 }
-
