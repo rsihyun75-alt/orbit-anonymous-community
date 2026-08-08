@@ -3,12 +3,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "orbit ???듬챸 而ㅻ??덊떚",
+    default: "orbit — 익명 커뮤니티",
     template: "%s | orbit",
   },
-  description: "濡쒓렇???놁씠 ?명븯寃??댁빞湲곕? ?섎늻???듬챸 而ㅻ??덊떚 orbit.",
+  description: "로그인 없이 편하게 이야기를 나누는 익명 커뮤니티 orbit.",
   applicationName: "orbit",
-  keywords: ["?듬챸 而ㅻ??덊떚", "寃뚯떆??, "?볤?", "??볤?"],
+  keywords: ["익명 커뮤니티", "게시판", "댓글", "대댓글"],
 };
 
 export const viewport: Viewport = {
@@ -24,4 +24,3 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   );
 }
-
